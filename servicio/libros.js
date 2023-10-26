@@ -1,10 +1,10 @@
-import model from "../model/librosmem.js";
+import model from "../model/librosMem.js";
 
 const obtenerTodosLosLibros = (id) => {
-  const productos = model.obtenerProductos(id);
+  const productos = model.obtenerTodosLosLibros(id);
   return productos;
 };
 
 export default {
-  obtenerTodosLosLibros,
+  obtenerTodosLosLibros
 };

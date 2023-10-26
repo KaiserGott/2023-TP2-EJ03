@@ -5,7 +5,7 @@ import routerLibros from "./router/libros.js";
 const app = express();
 //La función express.json() es una función de middleware integrada en Express. Analiza las requests entrantes con cargas JSON y se basa en body-parser
 app.use(express.json());
-
+//app.use(express.urlencoded({extended: true}))      
 
 // API RESTful : Productos
 app.use('/libros', routerLibros)
