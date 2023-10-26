@@ -8,6 +8,12 @@ const obtenerTodosLosLibros = () => {
     return libros;
 }
 
+const obtenerUnLibro = (id) => {
+    const libro = libros.find(libro => libro.id === id);
+    return libro;
+}
+
 export default {
-    obtenerTodosLosLibros
+    obtenerTodosLosLibros,
+    obtenerUnLibro
 }
