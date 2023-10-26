@@ -11,8 +11,15 @@ const obtenerUnLibro = (req,res) => {
     res.json(libro)
 }
 
+const crearUnLibro = (req,res) => {
+    const libroData = req.body
+    const libroCreado = servicio.crearUnLibro(libroData)
+    res.json(libroCreado)
+}
+
 export default {
     obtenerTodosLosLibros,
-    obtenerUnLibro 
+    obtenerUnLibro,
+    crearUnLibro
 }
 

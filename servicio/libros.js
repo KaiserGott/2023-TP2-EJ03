@@ -10,7 +10,13 @@ const obtenerUnLibro = (id) => {
   return producto;
 }
 
+const crearUnLibro = libroData => {
+  const libroCreado = model.crearUnLibro(libroData);
+  return libroCreado;
+}
+
 export default {
   obtenerTodosLosLibros,
-  obtenerUnLibro
+  obtenerUnLibro,
+  crearUnLibro
 };

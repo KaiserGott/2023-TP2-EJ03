@@ -13,7 +13,15 @@ const obtenerUnLibro = (id) => {
     return libro;
 }
 
+const crearUnLibro = libroData => {
+    const libroCreado = libros.push(libroData); //el metodo push retorna el nuevo lenght de la creacion
+    return libroCreado;
+}
+    
+
+
 export default {
     obtenerTodosLosLibros,
-    obtenerUnLibro
+    obtenerUnLibro,
+    crearUnLibro
 }
