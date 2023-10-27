@@ -13,6 +13,7 @@ const obtenerUnLibro = (req,res) => {
 
 const crearUnLibro = (req,res) => {
     const libroData = req.body
+    console.log(libroData)
     const libroCreado = servicio.crearUnLibro(libroData)
     res.json(libroCreado)
 }
