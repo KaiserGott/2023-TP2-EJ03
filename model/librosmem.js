@@ -16,8 +16,8 @@ const obtenerUnLibroPorID = (id) => {
 const crearUnLibro = libro => {
    // libro.id = String(parseInt(productos[productos.length - 1]?.id || 0) + 1) // ?. optional chaining
     libro.id = String(parseInt(libros[libros.length - 1]?.id || 0) + 1)
-    const libroCreado = libros.push(libro); //el metodo push retorna el nuevo length de la creacion
-    return libroCreado;
+    libros.push(libro); //el metodo push retorna el nuevo length de la creacion
+    return libro;
 }
     
 const buscarLibroPorTitulo = tituloLibro => {
@@ -25,9 +25,23 @@ const buscarLibroPorTitulo = tituloLibro => {
     return libro;
 }
 
+const borrarUnLibroPorID = (id) => {
+    let libroBorrado = {}
+    const indexLibro = libros.findIndex(libro => libro.id === id);
+    if(indexLibro != -1) {
+        libroBorrado = libros.splice(indexLibro,1)[0] 
+    }
+    return libroBorrado
+}
+
+
+
+
+
 export default {
     obtenerTodosLosLibros,
     obtenerUnLibroPorID,
     crearUnLibro,
-    buscarLibroPorTitulo
+    buscarLibroPorTitulo,
+    borrarUnLibroPorID
 }

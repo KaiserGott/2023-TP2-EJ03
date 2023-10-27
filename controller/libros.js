@@ -13,14 +13,20 @@ const obtenerUnLibro = (req,res) => {
 
 const crearUnLibro = (req,res) => {
     const libroData = req.body
-    console.log(libroData)
     const libroCreado = servicio.crearUnLibro(libroData)
     res.json(libroCreado)
+}
+
+const borrarUnLibroPorID = (req,res) => {
+    const {id} = req.params
+    const libroBorrado = servicio.borrarUnLibroPorID(id)
+    res.json(libroBorrado)
 }
 
 export default {
     obtenerTodosLosLibros,
     obtenerUnLibro,
-    crearUnLibro
+    crearUnLibro,
+    borrarUnLibroPorID
 }
 
