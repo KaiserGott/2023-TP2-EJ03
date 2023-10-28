@@ -7,6 +7,7 @@ const obtenerTodosLosLibros =  (req,res) => {
 
 const obtenerUnLibro = (req,res) => {
     const { id } = req.params
+    console.log(id)
     const libro = servicio.obtenerUnLibro(id)
     res.json(libro)
 }

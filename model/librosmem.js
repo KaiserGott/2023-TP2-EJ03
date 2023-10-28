@@ -1,7 +1,7 @@
 const libros = [
-    { id: "1", titulo: 'El señor de los anillos', autor: 'Tolkien', precio: 1000, stock: 55 },
-    { id: "2", titulo: 'El Padrino', autor: 'Mario Puzo', precio: 1250, stock: 35 },
-    { id: "3", titulo: 'Cien años de soledad', autor: 'Gabriel Garcia Márquez', precio: 1200, stock: 45},
+    { id: "1", titulo: 'El señor de los anillos', autor: 'Tolkien'},
+    { id: "2", titulo: 'El Padrino', autor: 'Mario Puzo'},
+    { id: "3", titulo: 'Cien años de soledad', autor: 'Gabriel Garcia Márquez'},
 ]
 
 const obtenerTodosLosLibros = () => {
@@ -17,7 +17,7 @@ const crearUnLibro = libro => {
    // libro.id = String(parseInt(productos[productos.length - 1]?.id || 0) + 1) // ?. optional chaining
     libro.id = String(parseInt(libros[libros.length - 1]?.id || 0) + 1)
     libros.push(libro); //el metodo push retorna el nuevo length de la creacion
-    return libro;
+    return libro; //retornar el libro con el id asignado
 }
     
 const buscarLibroPorTitulo = tituloLibro => {

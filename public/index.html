@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Mi bibliteca</title>
+  </head>
+  <body>
+    <div class="w-full max-w-xs">
+      <div
+        class="card bg-gray-100 shadow-sm rounded-md py-3 px-4 my-4 relative overflow-hidden"
+      >
+        <h2>Ingrese un nuevo Libro</h2>
+        <br />
+        <form action="/libros" method="post">
+          <div class="form-group">
+            <label for="titulo">Titulo</label>
+            <input type="text" name="titulo" id="titulo" class="form-control" />
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="autor">Autor</label>
+            <input type="text" name="autor" id="autor" class="form-control" />
+          </div>
+          <br>
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Enviar
+          </button>
+        </form>
+      </div>
+      <br>
+      <div class="card bg-gray-100 shadow-sm rounded-md py-3 px-4 my-4 relative overflow-hidden">
+        <h2>Obtenga todos los libros de la biblioteca</h2>
+        <br />
+        <form action="/libros" method="get">
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Obtener
+          </button>
+        </form>
+      </div>
+      <br>
+      <div
+        class="card bg-gray-100 shadow-sm rounded-md py-3 px-4 my-4 relative overflow-hidden"
+      >
+        <h2>Ingrese un ID para obtener un libro</h2>
+        <br />
+        <form id="buscarPorIdForm" method="get">
+            <div class="form-group">
+              <label for="id">Ingrese el ID</label>
+              <input type="text" name="id" id="id" class="form-control" />
+            </div>
+            <br>
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Buscar Por ID
+            </button>
+        </form>    
+    </div>
+
+    <script>
+        const buscarPorIdForm = document.getElementById('buscarPorIdForm');
+        const idInput = document.getElementById('id');
+        buscarPorIdForm.addEventListener('submit', function (event) {
+       // event.preventDefault();
+        const idValue = idInput.value;
+        const dynamicAction = `/libros/${idValue}`;
+        buscarPorIdForm.action = dynamicAction;
+        buscarPorIdForm.submit();
+        });
+    </script>
+
+   </body>
+
+
+</html>
