@@ -32,9 +32,19 @@ const borrarUnLibroPorID = (id) => {
   }
 };
 
+const actualizarLibro = (id, libroData) => {
+  const libroActualizado = model.actualizarLibro(id, libroData);
+  if (libroActualizado == -1) {
+    return "El ID ingresado no corresponde a ningun libro en su base de datos";
+  } else {
+    return libroActualizado;
+  }
+}
+
 export default {
   obtenerTodosLosLibros,
   obtenerUnLibro,
   crearUnLibro,
   borrarUnLibroPorID,
+  actualizarLibro
 };

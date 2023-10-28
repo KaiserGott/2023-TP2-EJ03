@@ -24,6 +24,11 @@
             <input type="text" name="autor" id="autor" class="form-control" />
           </div>
           <br>
+          <div class="form-group">
+            <label for="año">Año</label>
+            <input type="number" name="año" id="año" class="form-control" />
+          </div>
+          <br>
           <button
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           >
@@ -69,8 +74,8 @@
         buscarPorIdForm.addEventListener('submit', function (event) {
        // event.preventDefault();
         const idValue = idInput.value;
-        const dynamicAction = `/libros/${idValue}`;
-        buscarPorIdForm.action = dynamicAction;
+        const pathdinamico = `/libros/${idValue}`;
+        buscarPorIdForm.action = pathdinamico;
         buscarPorIdForm.submit();
         });
     </script>

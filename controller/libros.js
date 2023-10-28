@@ -24,10 +24,18 @@ const borrarUnLibroPorID = (req,res) => {
     res.json(libroBorrado)
 }
 
+const actualizarLibro = (req,res) => {
+    const {id} = req.params
+    const libroData = req.body
+    const libroActualizado = servicio.actualizarLibro(id, libroData)
+    res.json(libroActualizado)
+}
+
 export default {
     obtenerTodosLosLibros,
     obtenerUnLibro,
     crearUnLibro,
-    borrarUnLibroPorID
+    borrarUnLibroPorID,
+    actualizarLibro
 }
 
